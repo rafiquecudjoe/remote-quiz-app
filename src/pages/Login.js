@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-import ImageLight from "../pages/quiz2.jpg";
-import ImageDark from "../pages/quiz.jpg";
+import ImageLight from "../asset/images/quiz2.jpg";
+import ImageDark from "../asset/images/quiz2.jpg";
 import { GithubIcon, TwitterIcon } from "../icons";
 import { Label, Input, Button } from "@windmill/react-ui";
 import { useState } from "react";

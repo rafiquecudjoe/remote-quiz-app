@@ -9,7 +9,8 @@ import AppSuspense from "../../AppSuspense";
 import { SidebarContext } from "../../context/SidebarContext";
 
 const Page404 = lazy(() => import("../404/Express404"));
-const dashdefault = lazy(()=>import('../dashHome'))
+const dashdefault = lazy(() => import('../dashHome'))
+const Questionare = lazy(()=>import('../Questionare'))
 
 function Layout() {
   const { isSidebarOpen, closeSidebar } = useContext(SidebarContext);
@@ -43,7 +44,7 @@ function Layout() {
                 ) : null;
               })}
               <Redirect exact from="/app" to="/app/dashboard" />
-              <Route component={dashdefault} />
+              <Route component={Questionare} />
             </Switch>
           </Suspense>
         </Main>
