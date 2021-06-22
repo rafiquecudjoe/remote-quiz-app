@@ -1,15 +1,16 @@
 import { lazy } from "react";
 
+
+
+
 // use lazy for better code splitting, a.k.a. load faster
 const Express404 = lazy(() => import("../pages/404/Express404"));
-// const Sending = lazy(() => import("../pages/Dashboard/sending/Sending"));
-// const Neworder = lazy(() => import("../pages/Dashboard/Neworder/Neworder"));
-// const Tracking = lazy(() => import("../pages/Dashboard/Tracking/Tracking"));
-// const Receiving = lazy(() => import("../pages/Dashboard/Receiving/Receiving"));
-// const Help = lazy(() => import("../pages/Dashboard/Help/Help"));
-// const Payment = lazy(() => import("../pages/Dashboard/payment/Payment"));
-// const Checkout = lazy(() => import("../pages/Dashboard/checkout/CheckoutMM"));
-// const Dashboarddefault = lazy(()=> import('../pages/Dashboard/Dashboarddefault'))
+const Createaquiz = lazy(() => import("../pages/Questionare"))
+const Classes = lazy(() => import("../pages/Classes"))
+const TakeAQuiz = lazy(() => import("../pages/TakeAQuiz"))
+const Layout = lazy(() => import("../pages/dashboard/Layout"))
+const Help = lazy(()=> import("../pages/Help"))
+const Settings = lazy(()=> import("../pages/Settings"))
 
 /**
  * ⚠ These are internal routes!
@@ -22,55 +23,35 @@ const Express404 = lazy(() => import("../pages/404/Express404"));
  * `routes/sidebar.js`
  */
 const routes = [
-  //   {
-  //     path: '/dashboarddefault', // the url
-  //     component: Dashboard, // view rendered
-  //   },
+    {
+      path: '/dashboard', // the url
+      component: Layout, // view rendered
+    },
   {
-    path: "/sending",
-    component:Express404,
+    path: "/takeaquiz",
+    component:TakeAQuiz,
   },
   {
-    path: "/receiving",
-    component: Express404,
+    path: "/classes",
+    component: Classes,
   },
   {
-    path: "/tracking",
-    component: Express404,
+    path: "/createaquiz",
+    component: Createaquiz,
   },
-  //   {
-  //     path: '/settings',
-  //     component: Settings,
-  //   },
-  //   {
-  //     path: '/billing',
-  //     component: Billing,
-  //   },
+    {
+      path: '/settings',
+      component: Settings,
+    },
   {
-    path: "/help",
-    component: Express404,
-  },
-  {
-    path: "/404",
-    component: Express404,
-  },
+    path: '/help',
+    component: Help,
+    },
 
-  {
-    path: "/neworder",
-    component: Express404,
-  },
-  {
-    path: "/payment",
-    component: Express404,
-  },
-  {
-    path: "/checkout",
-    component: Express404
-  },
-  {
-    path: '/dashdefault',
-    component: Express404
-  }
+
+
+
+
 ];
 
 export default routes;

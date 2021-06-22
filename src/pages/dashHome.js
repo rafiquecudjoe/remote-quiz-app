@@ -9,19 +9,27 @@ import {
     ModalFooter,
     Button,
     Select,
-  } from "@windmill/react-ui";
+} from "@windmill/react-ui";
+import {useHistory} from "react-router-dom"
   
 
 
 function DashHome() {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const history=useHistory()
 
     const openModal = () => {
       setIsModalOpen(true);
     };
     const closeModal = () => {
       setIsModalOpen(false);
-    };
+      history.push('/dashboard/classes')
+  };
+  
+  const toquiz = () => {
+     history.push('/dashboard/takeaquiz')
+  }
+
     return (
         <div className={dashHomecss.main}>
             <div className={dashHomecss.text}>
@@ -30,7 +38,7 @@ function DashHome() {
                 
                 <div style={{display:'flex',flexDirection:'row',justifyContent:'center'}}>
                 <ButtonComp onClick={openModal} className="mr-10"text="Create Class"/>
-                <ButtonComp layout="outline"text="Take a Quiz"/>
+            <ButtonComp layout="outline" text="Take a Quiz" onClick={toquiz }/>
 
                 </div>
                

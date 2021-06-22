@@ -7,22 +7,22 @@
  */
  const routes = [
     {
-      path: '/dashboard/dashdefault', // the url
+      path: '/dashboard', // the url
       icon: 'HomeIcon', // the component being exported from icons/index.js
       name: 'Home', // name that appear in Sidebar
     },
     {
-      path: '/dashboard/sending',
+      path: '/dashboard/classes',
       icon: 'FormsIcon',
       name: 'Classes',
     },
     {
-      path: '/dashboard/receiving',
+      path: '/dashboard/takeaquiz',
       icon: 'CardsIcon',
       name: 'Take a Quiz',
     },
     {
-      path: '/dashboard/tracking',
+      path: '/dashboard/createaquiz',
       icon: 'ChartsIcon',
       name: 'Create a Quiz',
     },
@@ -31,11 +31,6 @@
       icon: 'ButtonsIcon',
       name: 'Settings',
     },
-    // {
-    //   path: '/dashboard/billing',
-    //   icon: 'ModalsIcon',
-    //   name: 'Billing',
-    // },
     {
       path: '/dashboard/help',
       icon: 'TablesIcon',

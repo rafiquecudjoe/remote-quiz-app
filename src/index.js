@@ -5,14 +5,18 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { SidebarProvider } from "./context/SidebarContext";
 import { Windmill } from "@windmill/react-ui";
+import store from "./Redux/Store";
+import { Provider } from "react-redux";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Windmill>
-      <SidebarProvider>
-        <App />
-      </SidebarProvider>
-    </Windmill>
+    <Provider store={store}>
+      <Windmill>
+        <SidebarProvider>
+          <App />
+        </SidebarProvider>
+      </Windmill>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
