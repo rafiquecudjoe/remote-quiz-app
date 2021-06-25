@@ -1,6 +1,6 @@
 import React from "react";
 import { Select, Input } from "@windmill/react-ui";
-import ButtonComp from "../components/appcomponents/Button";
+import ButtonComp from "./Button";
 
 function Questionare() {
   return (

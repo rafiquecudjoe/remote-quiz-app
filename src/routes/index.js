@@ -2,7 +2,7 @@ import { lazy } from "react";
 
 // use lazy for better code splitting, a.k.a. load faster
 const Express404 = lazy(() => import("../pages/404/Express404"));
-const Createaquiz = lazy(() => import("../pages/Questionare"))
+const Createaquiz = lazy(() => import("../pages/dashboard/createAQuiz"))
 const Classes = lazy(() => import("../pages/Classes"))
 const TakeAQuiz = lazy(() => import("../pages/TakeAQuiz"))
 const Layout = lazy(() => import("../pages/dashboard/Layout"))
