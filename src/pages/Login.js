@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-import ImageLight from "../asset/images/quiz2.jpg";
-import ImageDark from "../asset/images/quiz2.jpg";
+import ImageLight from "../asset/images/lllogin.svg";
+import ImageDark from "../asset/images/lllogin.svg";
 import { GithubIcon, TwitterIcon } from "../icons";
 import { Label, Input, Button } from "@windmill/react-ui";
 import { useState } from "react";
@@ -82,7 +82,7 @@ function Login(props) {
                   <Input
                     className="mt-1"
                     type="email"
-                    placeholder="john@doe.com"
+                    placeholder="rasgalazy5@gmail.com"
                     name="email"
                     onChange={updateValues}
                   />
@@ -129,7 +129,7 @@ function Login(props) {
 
                 <p className="mt-4">
                   <Link
-                    className="text-sm font-medium text-green-600 dark:text-green-400 hover:underline"
+                    className="text-sm font-medium text-purple-400 dark:text-green-400 hover:underline"
                     to="/forgot"
                   >
                     Forgot your password?
@@ -137,7 +137,7 @@ function Login(props) {
                 </p>
                 <p className="mt-1">
                   <Link
-                    className="text-sm font-medium text-green-600 dark:text-green-400 hover:underline"
+                    className="text-sm font-medium text-purple-400 dark:text-green-400 hover:underline"
                     to="/signup"
                   >
                     Create account

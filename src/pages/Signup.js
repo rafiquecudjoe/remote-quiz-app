@@ -2,8 +2,8 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { GithubIcon, TwitterIcon } from "../icons";
 import { Input, Label, Button } from "@windmill/react-ui";
-import ImageLight from "../asset/images/learn5.jpg";
-import ImageDark from "../asset/images/learn5.jpg";
+import ImageLight from "../asset/images/slo.svg";
+import ImageDark from "../asset/images/slo.svg";
 import { useState } from "react";
 import Alerts from "../components/appcomponents/Alert";
 import LoaderComp from "../components/appcomponents/LoaderComp";
@@ -94,7 +94,7 @@ function Signup() {
                   <Input
                     className="mt-1"
                     type="email"
-                    placeholder="john@doe.com"
+                    placeholder="rasgalazy5@gmail.com"
                     name="email"
                     onChange={updateValues}
                   />
@@ -104,13 +104,13 @@ function Signup() {
                   <Input
                     className="mt-1"
                     type="text"
-                    placeholder="John Doe"
+                    placeholder="Rafique Cudjoe"
                     name="fullname"
                     onChange={updateValues}
                   />
                 </Label>
 
-                <Label className="mt-4">
+                <Label className="mt-1">
                   <span>Password</span>
                   <Input
                     className="mt-1"
@@ -121,7 +121,7 @@ function Signup() {
                   />
                 </Label>
 
-                <Label className="mt-4">
+                <Label className="mt-1">
                   <span>Confirm password</span>
                   <Input
                     className="mt-1"
