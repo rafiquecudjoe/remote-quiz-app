@@ -5,12 +5,31 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { SidebarProvider } from "./context/SidebarContext";
 import { Windmill } from "@windmill/react-ui";
-import store from "./Redux/Store";
+import { createStore } from "redux";
 import { Provider } from "react-redux";
+
+export const SETQUESTIONSACTION = (value) => ({
+  type: "SET_QUESTIONS",
+  payload: value,
+});
+
+const QuestionReducer = (state = {}, action) => {
+  switch (action.type) {
+    case "SET_QUESTIONS":
+      return { ...state, questions: [...state.questions, action.payload] };
+
+    default:
+      return state;
+  }
+};
+
+const Store = createStore(QuestionReducer, {
+  questions: [],
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={Store}>
       <Windmill>
         <SidebarProvider>
           <App />

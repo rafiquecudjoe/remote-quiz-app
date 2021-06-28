@@ -1,9 +1,8 @@
 import React, { useContext, useState } from 'react';
-import {SidebarContext} from '../../context/SidebarContext';
+import { SidebarContext } from '../../context/SidebarContext';
+import lady from "../../asset/images/lady.png"
 import {
     SearchIcon,
-    MoonIcon,
-    SunIcon,
     BellIcon,
     MenuIcon,
     OutlinePersonIcon,
@@ -11,8 +10,10 @@ import {
     OutlineLogoutIcon,
 } from '../../icons';
 import { Avatar, Badge, Input, Dropdown, DropdownItem, WindmillContext } from '@windmill/react-ui'
+import { useHistory } from 'react-router-dom';
 
 function Header() {
+  const history = useHistory()
     const { mode, toggleMode } = useContext(WindmillContext)
     const { toggleSidebar } = useContext(SidebarContext)
   
@@ -24,7 +25,7 @@ function Header() {
     }
   
     function handleProfileClick() {
-      setIsProfileMenuOpen(!isProfileMenuOpen)
+      setIsProfileMenuOpen(true)
     }
     return (
         <header className="z-40 py-4 bg-white shadow-bottom dark:bg-gray-800">
@@ -52,7 +53,7 @@ function Header() {
             </div>
             <ul className="flex items-center flex-shrink-0 space-x-6">
               {/* <!-- Theme toggler --> */}
-              <li className="flex">
+          {/* <li className="flex">
                 <button
                   className="rounded-md focus:outline-none focus:shadow-outline-green"
                   onClick={toggleMode}
@@ -64,11 +65,11 @@ function Header() {
                     <MoonIcon className="w-5 h-5" aria-hidden="true" />
                   )}
                 </button>
-              </li>
+              </li>     */}
               {/* <!-- Notifications menu --> */}
               <li className="relative">
                 <button
-                  className="relative align-middle rounded-md focus:outline-none focus:shadow-outline-green"
+                  className=" bg-green relative align-middle rounded-md focus:outline-none focus:shadow-outline-purple"
                   onClick={handleNotificationsClick}
                   aria-label="Notifications"
                   aria-haspopup="true"
@@ -109,8 +110,7 @@ function Header() {
                 >
                   <Avatar
                     className="align-middle"
-                    src="https://images.unsplash.com/photo-1502378735452-bc7d86632805?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=aa3a807e1bbdfd4364d1f449eaa96d82"
-                    alt=""
+                    src={lady}
                     aria-hidden="true"
                   />
                 </button>
@@ -123,11 +123,17 @@ function Header() {
                     <OutlinePersonIcon className="w-4 h-4 mr-3" aria-hidden="true" />
                     <span>Profile</span>
                   </DropdownItem>
-                  <DropdownItem tag="a" href="#">
+                  <DropdownItem onClick={() => {
+                  
+                  history.push('/dashboard/settings')
+                }}>
                     <OutlineCogIcon className="w-4 h-4 mr-3" aria-hidden="true" />
                     <span>Settings</span>
                   </DropdownItem>
-                  <DropdownItem onClick={() => alert('Log out!')}>
+                <DropdownItem onClick={() => {
+                  alert('Log out!');
+                  history.push('/')
+                }}>
                     <OutlineLogoutIcon className="w-4 h-4 mr-3" aria-hidden="true" />
                     <span>Log out</span>
                   </DropdownItem>

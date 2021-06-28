@@ -19,7 +19,7 @@ function Login(props) {
 
   const submit = (e) => {
     e.preventDefault();
-  history.push('/dashboard')
+  history.push('/dashboard/app')
     // fetch("http://localhost:5000/api/v1/login", {
     //   method: "POST",
     //   body: JSON.stringify(values),

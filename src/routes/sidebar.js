@@ -7,7 +7,7 @@
  */
  const routes = [
     {
-      path: '/dashboard', // the url
+      path: '/dashboard/app', // the url
       icon: 'HomeIcon', // the component being exported from icons/index.js
       name: 'Home', // name that appear in Sidebar
     },

@@ -25,7 +25,7 @@ function Banner() {
           <ButtonComp
                   
                   text=" GET STARTED"
-                  className=" w-28 h-10 ml-4 mt-8 whitespace-nowrap text-base font-medium text-white mr-4 "
+                  className=" w-34 h-10 ml-4 mt-8  text-base font-medium text-white mr-4 "
                 />
                 
         </div>

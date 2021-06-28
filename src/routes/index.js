@@ -1,13 +1,14 @@
 import { lazy } from "react";
 
 // use lazy for better code splitting, a.k.a. load faster
-const Express404 = lazy(() => import("../pages/404/Express404"));
-const Createaquiz = lazy(() => import("../pages/dashboard/createAQuiz"))
-const Classes = lazy(() => import("../pages/Classes"))
-const TakeAQuiz = lazy(() => import("../pages/TakeAQuiz"))
-const Layout = lazy(() => import("../pages/dashboard/Layout"))
-const Help = lazy(()=> import("../pages/Help"))
-const Settings = lazy(()=> import("../pages/Settings"))
+
+const Createaquiz = lazy(() => import("../pages/dashboard/createAQuiz"));
+const Classes = lazy(() => import("../pages/Classes"));
+const Quizes = lazy(() => import("../components/appcomponents/Quizes"));
+const Layout = lazy(() => import("../pages/dashboard/Layout"));
+const Help = lazy(() => import("../pages/Help"));
+const Settings = lazy(() => import("../pages/Settings"));
+const TakeAQuiz = lazy(() => import("../pages/TakeAQuiz"));
 
 /**
  * ⚠ These are internal routes!
@@ -20,13 +21,13 @@ const Settings = lazy(()=> import("../pages/Settings"))
  * `routes/sidebar.js`
  */
 const routes = [
-    {
-      path: '/dashboard', // the url
-      component: Layout, // view rendered
-    },
+  {
+    path: "/dashboard/app", // the url
+    component: Layout, // view rendered
+  },
   {
     path: "/takeaquiz",
-    component:TakeAQuiz,
+    component: TakeAQuiz,
   },
   {
     path: "/classes",
@@ -36,19 +37,14 @@ const routes = [
     path: "/createaquiz",
     component: Createaquiz,
   },
-    {
-      path: '/settings',
-      component: Settings,
-    },
   {
-    path: '/help',
+    path: "/settings",
+    component: Settings,
+  },
+  {
+    path: "/help",
     component: Help,
-    },
-
-
-
-
-
+  },
 ];
 
 export default routes;

@@ -13,8 +13,9 @@
 }
 
 .left h1{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size:xx-large;
+    font-family: 'Kanit', sans-serif;
+    font-size: 35px;;
+    font-weight: 900;
     margin-bottom: 30px;
     margin-left: 20px;
     color: #6c2bd9;
@@ -22,7 +23,7 @@
 
 
 .left p{
-    font-family:sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin-left: 20px;
   
 }
