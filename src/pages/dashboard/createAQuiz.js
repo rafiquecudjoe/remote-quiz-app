@@ -7,8 +7,9 @@ export default function createAQuiz() {
   return (
     <div className="flex flex-row min-h-screen ">
       <div className="flex-1">
-        <h1 className="my-4">Create A Quiz</h1>
+        <h1 className="my-4 font-mono text-xl ml-28">Create A Quiz</h1>
         <Questionare />
+       
       </div>
 
       <div className="flex-1 ">

@@ -1,5 +1,6 @@
 import React from "react";
 import image1 from "../asset/images/quiz.svg";
+import ButtonComp from "../components/appcomponents/Button";
 import Quizes from "../components/appcomponents/Quizes";
 
 function TakeAQuiz() {
@@ -8,6 +9,8 @@ function TakeAQuiz() {
       <div className="flex-1">
         <h1>Take A Quiz</h1>
         <Quizes className="mt-4" />
+        <ButtonComp className="mt-4" text="Submit Answers" />
+       
       </div>
 
       <div className="flex-1 ">

@@ -14,7 +14,17 @@ function Questionare(props) {
   const submit = (e) => {
     e.preventDefault();
     setValues(values);
-    const { ans1, ans2, ans3, title, questtype, grade, question,questnumb } = values;
+    const {
+      ans1,
+      ans2,
+      ans3,
+      title,
+      questtype,
+      grade,
+      question,
+      questnumb,
+      file,
+    } = values;
     props.SET_QUESTIONS({
       ans1,
       ans2,
@@ -23,15 +33,18 @@ function Questionare(props) {
       questtype,
       grade,
       question,
-      questnumb
+      questnumb,
+      file,
     });
-   
   };
 
   return (
     <div>
       <h1>Question Number</h1>
       <Select name="questnumb" onChange={updateValues}>
+        <option defaultValue hidden>
+          Choose..
+        </option>
         <option>Question 1</option>
         <option>Question 2</option>
         <option>Question 3</option>
@@ -50,6 +63,7 @@ function Questionare(props) {
         <option>True/False</option>
       </Select>
       <Input
+        className="mt-2"
         onChange={updateValues}
         name="question"
         type="text"
@@ -58,33 +72,44 @@ function Questionare(props) {
 
       <h2>Responses</h2>
       <Input
+        className="mt-2"
         onChange={updateValues}
         name="ans1"
         type="text"
         placeholder="A)  Enter Answer"
       />
       <Input
+        className="mt-2"
         onChange={updateValues}
         name="ans2"
         type="text"
         placeholder="B)   Enter Answer"
       />
-      <Input
+
+      <Input className="mt-2"
         onChange={updateValues}
         type="text"
         name="ans3"
         placeholder="C)   Enter Answer"
       />
       <h2>Grading</h2>
-      <Select name="grade" onChange={updateValues}>
+      <Select  className="mt-2" name="grade" onChange={updateValues}>
+        <option defaultValue hidden>
+          Choose..
+        </option>
         <option>1 Mark</option>
         <option>2 Marks</option>
         <option>3 Marks</option>
         <option>4 Marks</option>
         <option>5 Marks</option>
       </Select>
+      <Input className="mt-2"
+        type="text"
+        name="canswer"
+        placeholder="Enter correct answer . eg. A"
+      />
 
-      <ButtonComp onClick={submit} text="Add a new Question" />
+      <ButtonComp  className="mt-2" onClick={submit} text="Add a new Question" />
     </div>
   );
 }

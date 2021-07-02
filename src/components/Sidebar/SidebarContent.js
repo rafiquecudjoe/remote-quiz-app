@@ -1,6 +1,6 @@
 import React from 'react'
 import routes from '../../routes/sidebar'
-import { NavLink, Route } from 'react-router-dom'
+import { NavLink, Route,useHistory } from 'react-router-dom'
 import * as Icons from '../../icons'
 import SidebarSubmenu from './SidebarSubmenu'
 import { Button } from '@windmill/react-ui'
@@ -11,6 +11,7 @@ function Icon({ icon, ...props }) {
 }
 
 function SidebarContent() {
+  const history=useHistory()
   return (
     <div className="py-4 text-gray-500 dark:text-gray-400">
       <a className="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="#">
@@ -40,7 +41,10 @@ function SidebarContent() {
         )}
       </ul>
       <div className="px-6 my-6">
-        <Button>
+        <Button onClick={() => {
+          alert('Log out!');
+          history.push('/')
+        }}>
           Logout
           
         </Button>

@@ -12,11 +12,21 @@ export const SETQUESTIONSACTION = (value) => ({
   type: "SET_QUESTIONS",
   payload: value,
 });
+export const deletequizaction = (value) => ({
+  type: "DELETE_QUIZ",
+  payload: value,
+});
 
 const QuestionReducer = (state = {}, action) => {
   switch (action.type) {
     case "SET_QUESTIONS":
       return { ...state, questions: [...state.questions, action.payload] };
+    
+      case "DELETE_QUIZ":
+        return {
+          ...state,
+          questions: state.questions.filter((questions, index) => questions.name !== action.payload.name),
+        };
 
     default:
       return state;
