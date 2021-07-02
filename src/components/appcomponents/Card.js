@@ -7,8 +7,8 @@ function CardComp({ className,text1,text2 }) {
     <div>
       <Card  className={className}>
         <CardBody>
-          <h1 className=" font-bold text-center">{text1}</h1>
-          <p>{text2}</p>
+          <h1 className="mb-4 font-bold text-center font-mono text-2xl">{text1}</h1>
+          <p className="font-mono">{text2}</p>
          
         </CardBody>
       </Card>

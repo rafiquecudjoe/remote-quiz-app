@@ -19,40 +19,8 @@ function Signup() {
 
   const submit = (e) => {
     e.preventDefault();
-    if (values.password === values.cpassword) {
-      setLoading(true);
-      fetch("https://expressbackend3.herokuapp.com/api/v1/signup", {
-        method: "POST",
-        body: JSON.stringify(values),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then((response) => response.json())
-        .then((response) => {
-          if (response.success == true) {
-            console.log("Sign up Successful")
-            setLoading(false);
-            setAlert(true);
-            history.push("/login");
-            
-          } else {
-            if (response.success == false) {
-              setLoading(false)
-              
-
-
-              
-            }
-            
-          }
-           
-          },
-          (err) => console.log(err)
-        );
-    } else {
-      setLoading(false);
-    }
+    history.push('/login')
+   
   };
 
   return (
